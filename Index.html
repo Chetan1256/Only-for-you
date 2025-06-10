@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Surprise</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #8e2de2, #4a00e0); /* Purple gradient */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #fff;
+      transition: all 0.5s ease;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .page {
+      display: none;
+      max-width: 90%;
+    }
+
+    .page.active {
+      display: block;
+      animation: fadeIn 1.2s ease;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      background-color: #ffffff33;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ffffff55;
+    }
+
+    .heart {
+      animation: heartbeat 1.2s infinite;
+      font-size: 40px;
+      margin: 20px 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.2); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page active">
+  <h2>Hey, the chapter I never wanted to close.</h2>
+  <p>Do you really want that surprise 🫢</p>
+  <button onclick="nextPage()">Yes</button>
+  <button onclick="nextPage()">The opposite of no 😜</button>
+</div>
+
+<div class="page">
+  <p style="margin-top: 40px; margin-bottom: 40px;">
+    Let's pretend...<br><br>
+    You're holding this in your hand... and I'm beside you.<br>
+    Not texting, Not calling. Just there.<br>
+    Not saying much - but watching you read this like it's the only thing that matters now.<br><br>
+    I know you smiled now, I can't see it but, I can feel it.<br><br>
+    Then maybe... you'd say, "This guy is silly"<br>
+    And I'd smile and say, "Yes, but only for you."<br><br>
+    So let's just keep pretending...<br>
+    Until someday it's real.<br><br>
+    Because some dreams... are worth pretending for.
+  </p>
+  <button onclick="nextPage()">Next</button>
+</div>
+
+<div class="page">
+  <p>
+    You’ve unknowingly become the moment I was waiting for...<br><br>
+    I know this is not a fancy gift like others might give you,<br>
+    but the effort I put into this is real and from the guy<br>
+    you never loved back... to you.
+  </p>
+  <button onclick="nextPage()">Next</button>
+  <button onclick="nextPage()">Next (but with that smile 😊)</button>
+</div>
+
+<div class="page">
+  <div class="heart">❤️</div>
+  <p>
+    This is for you, and only for you.<br><br>
+    HAPPY BIRTHDAY Deekshaa<br><br>
+    I don't know what to call you or how to call you!!<br>
+    You don’t need to reply... just your smile is enough for me.
+  </p>
+  <button onclick="nextPage()">Next</button>
+</div>
+
+<div class="page">
+  <p><b>Heyy gubeee, vapas baa msg maddidhuu sakuu nodidhuu 😅</b></p>
+</div>
+
+<script>
+  let current = 0;
+  const pages = document.querySelectorAll('.page');
+
+  function nextPage() {
+    pages[current].classList.remove('active');
+    current++;
+    if (current < pages.length) {
+      pages[current].classList.add('active');
+    }
+  }
+</script>
+
+</body>
+</html>
